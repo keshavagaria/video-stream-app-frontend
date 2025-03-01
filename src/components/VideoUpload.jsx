@@ -5,10 +5,9 @@ import { Card, Button, Label, Alert,Textarea, TextInput,Progress } from "flowbit
 import axios from "axios";
 import toast from "react-hot-toast";
 
-
-
+    
     function VideoUpload(){
-
+      
         const [meta,setMeta] = useState({
           title:"",
           description:"",
@@ -18,6 +17,10 @@ import toast from "react-hot-toast";
         const [uploading,setUploading] = useState(false);
         const [message,setMessage] = useState("");
 
+
+      
+       
+    
         function handleFileChange(event){
                 console.log(event.target.files[0]);
                 setSelectedFile(event.target.files[0]);
@@ -42,7 +45,7 @@ import toast from "react-hot-toast";
             saveVideoToServer(selectedFile,meta);
         }
 
-
+        
         function resetForm(){
 
           setMeta({
@@ -91,7 +94,7 @@ import toast from "react-hot-toast";
           }
         }
         return <div className="text-white">
-            <Card>
+            <Card className="bg-dark">
    
     <form noValidate className="flex flex-col space-y-6" onSubmit={handleForm} class="flex items-center space-x-6">
       <div>

@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import VideoUpload from './components/VideoUpload'
 import { Toaster } from 'react-hot-toast'
 import VideoPlayer from "./components/VideoPlayer"
+import FetchData from "./components/FetchData"
 import { Button, TextInput } from "flowbite-react"
 
 
@@ -11,6 +12,7 @@ function App() {
   const [count, setCount] = useState(0);
   const [fieldValue, setFieldValue] = useState(null);
   const [videoId, setVideoId] =useState("03eb135a-3516-4e4a-8c2c-521df3b33279");
+
 
   return (
     
@@ -64,6 +66,8 @@ function App() {
           Play
         </Button>
       </div>
+
+      <FetchData></FetchData>
     </div>
   </>
   )
