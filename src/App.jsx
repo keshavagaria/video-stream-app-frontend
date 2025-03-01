@@ -8,19 +8,24 @@ import { Toaster } from 'react-hot-toast'
 
 function App() {
   const [count, setCount] = useState(0)
-  const [videoId, setVideoId] =useState("596527a9-1404-4a9d-a480-3b2836de2027");
+  const [videoId, setVideoId] =useState("03eb135a-3516-4e4a-8c2c-521df3b33279");
 
   return (
     
     
-      <div className='flex flex-col items-center space-y-5 justify-center py-9'>
-        <h1 className='text-5xl font-extrabold dark:text-gray-100'>Video Streaming App</h1>
+      <div className='flex flex-col space-x-10 space-y-10' >
+        
+        <div className='text-center'>
+          <h1 className='text-5xl font-extrabold dark:text-gray-100'>Video Streaming App</h1>
+      </div>
 
-        <div>
-          <h1 className='text-white'>Playing Video</h1>
-          <video style={{width:500}} 
-          src={`http://localhost:8080/api/v1/videos/stream/range/${videoId}`}
-           controls></video>
+ 
+      <div className='flex flex-row space-x-10 py-10'>
+          <div className='items-start'>
+            <h1 className='text-white'>Playing Video</h1>
+            <video style={{width:500}} 
+            src={`http://localhost:8080/api/v1/videos/stream/range/${videoId}`}
+            controls></video>
 
 {/* <video
     id="my-video"
@@ -41,10 +46,12 @@ function App() {
     </p>
   </video> */}
         </div>
-        <VideoUpload />
-        <Toaster></Toaster>
-
-       
+        
+        <div className='items-end'>
+          <VideoUpload />
+         <Toaster></Toaster>
+       </div>
+    </div>  
     </div>
   )
 }
