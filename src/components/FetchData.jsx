@@ -10,7 +10,7 @@ function FetchData(){
     const [data,setData]=useState([]);
   
         useEffect(()=>{
-                axios.get('http://localhost:8080/api/v1/videos')
+                axios.get('http://localhost:8080/video-streaming-app/api/v1/videos')
                 .then(res=>setData(res.data))
                 .catch(err=>console.log(err));
         },[]);
