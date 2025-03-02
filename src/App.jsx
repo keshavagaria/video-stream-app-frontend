@@ -20,13 +20,13 @@ function App() {
     <>
     <Toaster />
     <div className="flex flex-col  items-center space-y-9 justify-center py-9">
-      <h1 className="text-2xl font-bold text-gray-700 dark:text-gray-100">
-        Video Streaming App
+      <h1 className="text-6xl font-bold text-gray-700 dark:text-gray-100">
+        <u>Video Streaming App</u>
       </h1>
 
       <div className="flex mt-14 w-full space-x-2  justify-between">
         <div className="w-full">
-          <h1 className="text-white text-center mt-2">Playing Video</h1>
+          <h1 className="text-white text-center mt-3">Playing Video</h1>
 
         <div>
           <video style={{
@@ -45,7 +45,7 @@ function App() {
   
         </div>
 
-        <div className="w-full">
+        <div className="w-fit">
           <VideoUpload />
         </div>
       </div>
