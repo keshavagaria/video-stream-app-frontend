@@ -11,7 +11,7 @@ function FetchData(){
     const [data,setData]=useState([]);
   
         useEffect(()=>{
-                axios.get('http://localhost:8080/api/v1/videos')
+                axios.get('http://192.168.1.2:8080/api/v1/videos')
                 .then(res=>setData(res.data))
                 .catch(err=>console.log(err));
         },[]);
@@ -19,7 +19,7 @@ function FetchData(){
          // Function to delete a post using Axios
   const deletePost = async (videoId) => {
     try {
-      await axios.delete(`http://localhost:8080/api/v1/videos/${videoId}`);
+      await axios.delete(`http://192.168.1.2:8080/api/v1/videos/${videoId}`);
       console.log("Post deleted:", id);
       setData(data.filter((post) => post.id !== id));
     } catch (error) {

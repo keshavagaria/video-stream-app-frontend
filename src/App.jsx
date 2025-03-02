@@ -32,7 +32,7 @@ function App() {
           <video style={{
                 width: "100%",
               }}
-          src={`http://localhost:8080/api/v1/videos/stream/${videoId}`}
+          src={`http://192.168.1.2:8080/api/v1/videos/stream/${videoId}`}
           controls>
         </video> 
       </div>
