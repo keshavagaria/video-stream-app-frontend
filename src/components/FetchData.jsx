@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Button } from "flowbite-react";
 import React,{ useEffect } from "react"
 import { useState } from 'react'
 
@@ -10,10 +11,21 @@ function FetchData(){
     const [data,setData]=useState([]);
   
         useEffect(()=>{
-                axios.get('http://localhost:8080/video-streaming-app/api/v1/videos')
+                axios.get('http://localhost:8080/api/v1/videos')
                 .then(res=>setData(res.data))
                 .catch(err=>console.log(err));
         },[]);
+
+         // Function to delete a post using Axios
+  const deletePost = async (videoId) => {
+    try {
+      await axios.delete(`http://localhost:8080/api/v1/videos/${videoId}`);
+      console.log("Post deleted:", id);
+      setData(data.filter((post) => post.id !== id));
+    } catch (error) {
+      console.error("Error deleting post:", error);
+    }
+  };
         
     return (
 
@@ -34,6 +46,8 @@ function FetchData(){
                     <td>{user.videoId}</td>
                     <td>{user.title}</td>
                     <td>{user.description}</td>
+                    <td><Button class="btn btn-danger" 
+                    onClick={() => deletePost(user.videoId)}>Delete</Button></td>
                 </tr>
     })
    }
