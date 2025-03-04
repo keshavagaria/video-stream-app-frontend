@@ -32,7 +32,7 @@ function App() {
           <video style={{
                 width: "100%",
               }}
-          src={`https://video-streaming-app-backend-production-50f7.up.railway.app/api/v1/videos/stream/${videoId}`}
+          src={`http://video-streaming-app-backend-production-50f7.up.railway.app/api/v1/videos/stream/${videoId}`}
           controls>
         </video> 
       </div>

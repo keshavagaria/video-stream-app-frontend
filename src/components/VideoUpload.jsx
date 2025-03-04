@@ -69,7 +69,7 @@ import toast from "react-hot-toast";
             formData.append("title",videoMetaData.title);
             formData.append("description",videoMetaData.description);
             
-            let response =  await axios.post(`https://video-streaming-app-backend-production-50f7.up.railway.app/api/v1/videos`,formData, {
+            let response =  await axios.post(`http://video-streaming-app-backend-production-50f7.up.railway.app/api/v1/videos`,formData, {
               headers: {
                   'Content-Type': 'multipart/form-data', // Set the content type for file upload
               },

@@ -11,7 +11,7 @@ function FetchData(){
     const [data,setData]=useState([]);
   
         useEffect(()=>{
-                axios.get('https://video-streaming-app-backend-production-50f7.up.railway.app/api/v1/videos')
+                axios.get('http://video-streaming-app-backend-production-50f7.up.railway.app/api/v1/videos')
                 .then(res=>setData(res.data))
                 .catch(err=>console.log(err));
         },[]);
@@ -19,7 +19,7 @@ function FetchData(){
          // Function to delete a post using Axios
   const deletePost = async (videoId) => {
     try {
-      await axios.delete(`https://video-streaming-app-backend-production-50f7.up.railway.app/api/v1/videos/${videoId}`);
+      await axios.delete(`http://video-streaming-app-backend-production-50f7.up.railway.app/api/v1/videos/${videoId}`);
       console.log("Post deleted:", id);
       setData(data.filter((post) => post.id !== id));
     } catch (error) {
