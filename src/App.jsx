@@ -11,7 +11,7 @@ import { Button, TextInput } from "flowbite-react"
 function App() {
   const [count, setCount] = useState(0);
   const [fieldValue, setFieldValue] = useState(null);
-  const [videoId, setVideoId] =useState("aeb42827-3dba-4170-8a22-53f2875e1cf9");
+  const [videoId, setVideoId] =useState("00b06a88-ec51-41d5-8927-350535438367");
 
 
   return (
@@ -53,6 +53,8 @@ function App() {
       <div className="my-4 flex  space-x-4">
         <TextInput
           onClick={(event) => {
+            console.log(event.target.value);
+            
             setFieldValue(event.target.value);
           }}
           placeholder="Enter video id here"
