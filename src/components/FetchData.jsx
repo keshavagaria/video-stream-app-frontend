@@ -41,7 +41,7 @@ function FetchData(){
       <th scope="col">Description</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody> 
    { 
     data.map((user,index)=>{
         return <tr key={index}>
