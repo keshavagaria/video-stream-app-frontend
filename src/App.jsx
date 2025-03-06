@@ -46,7 +46,7 @@ function App() {
             <VideoPlayer
               src={`https://video-streaming-app-backend-production-50f7.up.railway.app/api/v1/videos/${videoId}/master.m3u8`}
             ></VideoPlayer>
-          </div> 
+          </div>  
 
   
         </div>
