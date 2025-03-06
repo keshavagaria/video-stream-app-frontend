@@ -11,7 +11,7 @@ import { Button, TextInput } from "flowbite-react"
 function App() {
   const [count, setCount] = useState(0);
   const [fieldValue, setFieldValue] = useState(null);
-  const [videoId, setVideoId] =useState("3611a779-0b19-4c42-89ab-e80d1b4334e4");
+  const [videoId, setVideoId] =useState("e2ebf830-6d2d-48d5-b59a-5c3fe6cd2fef");
 
 
   return (
@@ -32,7 +32,8 @@ function App() {
           <video style={{
                 width: "100%",
               }}
-          src={`https://video-streaming-app-backend-production-50f7.up.railway.app/api/v1/videos/stream/${videoId}`}
+          //src={`http://localhost:8080/api/v1/videos/stream/range/${videoId}`}
+          src={`https://video-streaming-app-backend-production-50f7.up.railway.app/api/v1/videos/stream/range/${videoId}`}
           controls>
         </video> 
       </div>
