@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react"
 import videojs from "video.js";
 import "video.js/dist/video-js.css";
+import Hls from "hls.js";
 import toast from "react-hot-toast";
 
 
@@ -20,22 +21,22 @@ function VideoPlayer({ src }){
         });
         
 
-        // if (Hls.isSupported()) {
-        //     const hls = new Hls();
-        //     hls.loadSource(src);
-        //     hls.attachMedia(videoRef.current);
-        //     hls.on(Hls.Events.MANIFEST_PARSED, () => {
-        //       videoRef.current.play();
-        //     });
-        //   } else if (videoRef.current.canPlayType("application/vnd.apple.mpegurl")) {
-        //     videoRef.current.src = src;
-        //     videoRef.current.addEventListener("canplay", () => {
-        //       videoRef.current.play();
-        //     });
-        //   } else {
-        //     console.log("video format not supportted");
-        //     toast.error("Video format not supporteds");
-        //   }
+        if (Hls.isSupported()) {
+            const hls = new Hls();
+            hls.loadSource(src);
+            hls.attachMedia(videoRef.current);
+            hls.on(Hls.Events.MANIFEST_PARSED, () => {
+              videoRef.current.play();
+            });
+          } else if (videoRef.current.canPlayType("application/vnd.apple.mpegurl")) {
+            videoRef.current.src = src;
+            videoRef.current.addEventListener("canplay", () => {
+              videoRef.current.play();
+            });
+          } else {
+            console.log("video format not supportted");
+            toast.error("Video format not supporteds");
+          }
 
     },[src]);
     return (
