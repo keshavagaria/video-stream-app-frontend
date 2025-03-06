@@ -33,7 +33,7 @@ function App() {
                 width: "100%",
               }}
           //src={`http://localhost:8080/api/v1/videos/stream/range/${videoId}`}
-          src={`https://video-streaming-app-backend-production-50f7.up.railway.app/api/v1/videos/stream/range/${videoId}`}
+          src={`https://video-streaming-app-backend-production-50f7.up.railway.app/api/v1/videos/${videoId}/master.m3u8`}
           controls>
         </video> 
       </div>
