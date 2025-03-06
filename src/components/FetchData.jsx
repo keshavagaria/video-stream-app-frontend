@@ -21,8 +21,7 @@ function FetchData(){
   const deletePost = async (videoId) => {
     try {
       //await axios.delete(`http://localhost:8080/api/v1/videos/${videoId}`);
-      await axios.delete(`https://video-streaming-app-backend-production-50f7.up.railway.app
-/api/v1/videos/${videoId}`);
+      await axios.delete(`https://video-streaming-app-backend-production-50f7.up.railway.app/api/v1/videos/${videoId}`);
       console.log("Post deleted:", id);
       setData(data.filter((post) => post.id !== id));
     } catch (error) {

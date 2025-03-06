@@ -11,7 +11,7 @@ import { Button, TextInput } from "flowbite-react"
 function App() {
   const [count, setCount] = useState(0);
   const [fieldValue, setFieldValue] = useState(null);
-  const [videoId, setVideoId] =useState("e2ebf830-6d2d-48d5-b59a-5c3fe6cd2fef");
+  const [videoId, setVideoId] =useState("4ae43354-4cc4-4072-a01c-24a1a2a8a637");
 
  
   return (
@@ -28,20 +28,20 @@ function App() {
         <div className="w-full">
           <h1 className="text-white text-center mt-3">Playing Video</h1>
 
-        <div>
+        {/* <div>
           <video style={{
                 width: "100%",
               }}
-          //src={`http://localhost:8080/api/v1/videos/stream/range/${videoId}`}
-          src={`https://video-streaming-app-backend-production-50f7.up.railway.app/api/v1/videos/stream/range/${videoId}`}
+          src={`http://localhost:8080/api/v1/videos/stream/range/${videoId}`}
+          //src={`https://video-streaming-app-backend-production-50f7.up.railway.app/api/v1/videos/stream/range/${videoId}`}
           controls>
         </video> 
-      </div>
-          {/* <div>
+      </div> */}
+           <div>
             <VideoPlayer
-              src="{`http://localhost:8080/api/v1/videos/${videoId}`}"
+              src={`https://video-streaming-app-backend-production-50f7.up.railway.app/api/v1/videos/${videoId}/master.m3u8`}
             ></VideoPlayer>
-          </div> */}
+          </div> 
 
   
         </div>

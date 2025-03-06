@@ -38,7 +38,7 @@ function VideoPlayer({ src }){
             toast.error("Video format not supporteds");
           }
 
-    },[src]); 
+    },[src]);  
     return (
         <div>
         <div data-vjs-player>
