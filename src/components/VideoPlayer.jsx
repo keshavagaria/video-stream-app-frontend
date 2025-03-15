@@ -1,7 +1,7 @@
 import React, { useEffect, useRef,useState } from "react"
 import videojs from 'video.js';
 import 'video.js/dist/video-js.css';
-import 'videojs-quality-selector-hls';
+
 
 
 export const VideoPlayer = (props) => {
@@ -26,10 +26,7 @@ export const VideoPlayer = (props) => {
         onReady && onReady(player);
       });
 
-     player.qualitySelectorHls({
-      displayCurrentQuality: true,
-      vjsIconClass: 'vjs-icon-hd'
-    });
+    
 
    } else {
       const player = playerRef.current;
