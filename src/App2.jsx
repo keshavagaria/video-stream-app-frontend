@@ -1,4 +1,4 @@
-import { useState,useRef } from 'react'
+import { useState } from 'react'
 import VideoUpload from './components/VideoUpload'
 import { Toaster } from 'react-hot-toast'
 import VideoPlayer from "./components/VideoPlayer"
@@ -7,43 +7,13 @@ import { Button, TextInput } from "flowbite-react"
 
 
 
-function App() {
+function App2() {
   const [count, setCount] = useState(0);
   const [fieldValue, setFieldValue] = useState(null);
-  const [videoId, setVideoId] =useState("3e70eabe-540a-441e-aa1e-d7bbe2c0bfd8");
+  const [videoId, setVideoId] =useState("270c0fe7-809c-4984-8da5-bdfce3b9f233");
   const [resolution, setResolution] =useState("360p");
-  const playerRef = useRef(null);
 
-  const videoJsOptions = {
-    autoplay: true,
-    controls: true,
-    responsive: true,
-    fluid: true,
-    muted: true,
-    preload: "auto",
-    download: true,
-    playbackRates: [0.5, 1, 1.5, 2],
-sources: [{
-  src: `http://localhost:8080/api/v1/videos/${videoId}/${resolution}/master.m3u8`,
-  type: 'application/x-mpegURL',
-}]
-};
-
-
-const handlePlayerReady = (player) => {
-    playerRef.current = player;
-
-    // You can handle player events here, for example:
-    player.on('waiting', () => {
-      videojs.log('player is waiting');
-    });
-
-    player.on('dispose', () => {
-      videojs.log('player will dispose');
-    });
-  };
-
-
+ 
   return (
     
     
@@ -60,7 +30,7 @@ const handlePlayerReady = (player) => {
 
            <div>
             <VideoPlayer
-              options={videoJsOptions} onReady={handlePlayerReady}  
+              src={`http://localhost:8080/api/v1/videos/${videoId}/${resolution}/master.m3u8`}
             >
 
 
@@ -69,8 +39,7 @@ const handlePlayerReady = (player) => {
   <div className='flex flex-row'>
         <Button  onClick={() => { 
             setResolution('360p');
-            
-          }} color="success">360p</Button>
+          }}>360p</Button>
  
         {/* <Button  onClick={() => {
             setResolution('480p');
@@ -79,11 +48,11 @@ const handlePlayerReady = (player) => {
         <Button onClick={() => {
           //resolution='720p';
             setResolution("720p");
-          }} color="success">720p</Button>
+          }}>720p</Button>
 
       <Button  onClick={() => {
             setResolution('1080p');
-          }} color="success">1080p</Button>
+          }}>1080p</Button>
   </div>
         </div>
 
@@ -119,4 +88,4 @@ const handlePlayerReady = (player) => {
   )
 }
 
-export default App
+export default App2
